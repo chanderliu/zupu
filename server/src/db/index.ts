@@ -3,7 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { SCHEMA } from './schema';
 
-const DB_PATH = path.join(__dirname, '..', '..', 'data', 'zupu.db');
+const dataDir = process.env.DATA_DIR || path.join(__dirname, '..', '..', 'data');
+const DB_PATH = path.join(dataDir, 'zupu.db');
 
 let db: Database;
 
